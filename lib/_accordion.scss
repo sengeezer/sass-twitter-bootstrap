@@ -4,9 +4,7 @@
 
 
 // Parent container
-.accordion {
-  margin-bottom: $baseLineHeight;
-}
+.accordion { margin-bottom: $baseLineHeight; }
 
 // Group == heading + body
 .accordion-group {
@@ -16,16 +14,14 @@
 }
 .accordion-heading {
   border-bottom: 0;
-}
-.accordion-heading .accordion-toggle {
-  display: block;
-  padding: 8px 15px;
+  .accordion-toggle {
+    display: block;
+    padding: 8px 15px;
+  }
 }
 
 // General toggle styles
-.accordion-toggle {
-  cursor: pointer;
-}
+.accordion-toggle { cursor: pointer; }
 
 // Inner needs the styles because you can't animate properly with any styles on the element
 .accordion-inner {

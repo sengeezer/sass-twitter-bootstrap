@@ -1,20 +1,12 @@
-# [Twitter Bootstrap v2.2.2](http://twitter.github.com/bootstrap) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](http://travis-ci.org/twitter/bootstrap)
+#Twitter Bootstrap v2.2.2 - in SASS
 
 Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
 
 To get started, checkout http://getbootstrap.com!
 
+## This fork
 
-
-## Quick start
-
-Three quick start options are available:
-
-* [Download the latest release](https://github.com/twitter/bootstrap/zipball/master).
-* Clone the repo: `git clone git://github.com/twitter/bootstrap.git`.
-* Install with Twitter's [Bower](http://twitter.github.com/bower): `bower install bootstrap`.
-
-
+This fork contains what I consider to be improvements over jlong's version. I will try to keep up with his updates.
 
 ## SASS: Usage
 
@@ -25,18 +17,6 @@ Because SASS always outputs standard css, just link to the final output like nor
 `<link rel="stylesheet" type="text/css" href="bootstrap-2.2.2.css">`
 
 For more info, refer to the docs!
-
-
-
-## SASS: Basic modification
-
-You can learn more about SASS at:
-
-[sass-lang.com](http://sass-lang.com)
-
-SASS runs as a local GEM on your system. You can run `sass --watch lib/bootstrap.scss:bootstrap-2.2.2.css`
-
-
 
 ## Versioning
 
@@ -54,14 +34,6 @@ And constructed with the following guidelines:
 
 For more information on SemVer, please visit http://semver.org/.
 
-
-
-## Bug tracker
-
-Have a bug or a feature request? [Please open a new issue](https://github.com/twitter/bootstrap/issues). Before opening any issue, please search for existing issues and read the [Issue Guidelines](https://github.com/necolas/issue-guidelines), written by [Nicolas Gallagher](https://github.com/necolas/).
-
-
-
 ## Community
 
 Keep track of development and community news.
@@ -70,8 +42,6 @@ Keep track of development and community news.
 * Read and subscribe to the [The Official Twitter Bootstrap Blog](http://blog.getbootstrap.com).
 * Have a question that's not a feature request or bug report? [Ask on the mailing list.](http://groups.google.com/group/twitter-bootstrap)
 * Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##twitter-bootstrap` channel.
-
-
 
 ## SASS: Developers
 
@@ -83,8 +53,6 @@ The lessc compiler is required for this command to run.
 
 + **watch** - `rake watch`
 This is a convenience method for watching your Sass files and automatically building them whenever you save.
-
-
 
 ## Developers
 
@@ -106,17 +74,13 @@ Runs jshint and qunit tests headlessly in [phantomjs](http://code.google.com/p/p
 + **watch** - `make watch`
 This is a convenience method for watching just Less files and automatically building them whenever you save. Requires the Watchr gem.
 
-
-
 ## Contributing
 
 Please submit all pull requests against *-wip branches. If your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the [Code Guide](http://github.com/mdo/code-guide), maintained by [Mark Otto](http://github.com/mdo).
 
 Thanks!
 
-
-
-## Authors
+## Original authors
 
 **Mark Otto**
 
@@ -127,8 +91,6 @@ Thanks!
 
 + http://twitter.com/fat
 + http://github.com/fat
-
-
 
 ## SASS: Conversion less to Sass
 
@@ -156,8 +118,6 @@ The Twitter Bootstrap was lovingly converted to Sass by:
 
 And [others](https://github.com/jlong/sass-twitter-bootstrap/contributors)
 
-
-
 ## SASS: Conversion Quick Tips
 
 * replace @ with $
@@ -172,8 +132,6 @@ And [others](https://github.com/jlong/sass-twitter-bootstrap/contributors)
 * move @import for reset below mixins, because it uses tab-focus mixin in bootstrap.scss
 * explicitly provide .clearfix, .hide-text and .input-block-level for compatibility with LESS output
 * pass grid-* mixin arguments to generators, because otherwise the generator mixins will use the default variables pull transition definition into variable
-
-
 
 ## Copyright and license
 
