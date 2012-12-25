@@ -6,8 +6,10 @@
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
-  font-size: 18px;
-  font-weight: 200;
+  font: {
+    size: 18px;
+    weight: 200;
+  }
   line-height: $baseLineHeight * 1.5;
   color: $heroUnitLeadColor;
   background-color: $heroUnitBackground;
