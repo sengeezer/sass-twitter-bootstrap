@@ -6,7 +6,7 @@ To get started, checkout http://getbootstrap.com!
 
 ## This fork
 
-This fork contains what I consider to be improvements over jlong's version, e.g. SCSS nesting. I will try to keep up with his material updates.
+This fork is an evolution of jlong's version and contains more thorough SCSS, e.g. nesting, and less clutter overall. I will try to keep up with his material updates.
 
 ## SASS: Usage
 
