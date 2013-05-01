@@ -25,7 +25,7 @@
     font-weight: 200;
     color: $navbarBrandColor;
     @include text-shadow(0 1px 0 $navbarBackgroundHighlight);
-    &:hover { text-decoration: none; }
+    &:hover, &:focus { text-decoration: none; }
   }
   // Dividers in navbar
   .divider-vertical {
@@ -39,6 +39,9 @@
     .btn {
       margin-top: 0; // then undo the margin here so we don't accidentally double it
     }
+  }
+  .input-prepend, .input-append {
+    .btn-group { margin-top: 0; } // same here
   }
   .nav {
     position: relative;
@@ -60,7 +63,7 @@
         text-decoration: none;
         @include text-shadow(0 1px 0 $navbarBackgroundHighlight);
         &:focus, &:hover {
-          background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
+          background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :focus / :hover from .active
           color: $navbarLinkColorHover;
           text-decoration: none;
         }
@@ -103,11 +106,13 @@
         @include box-shadow(inset 0 3px 8px rgba(0,0,0,.125));
       }
     }
-    // Caret should match text color on hover
+    // Caret should match text color on hover / focus
     li.dropdown {
-      > a:hover .caret {
-        border-top-color: $navbarLinkColorActive;
-        border-bottom-color: $navbarLinkColorActive;
+      > a:hover, > a:focus {
+        .caret {
+          border-top-color: $navbarLinkColorActive;
+          border-bottom-color: $navbarLinkColorActive;
+        }
       }
       // Remove background color from open dropdown
       &.open, &.active, &.open.active {
@@ -203,7 +208,7 @@
 // Janky solution for now to account for links outside the .nav
 .navbar-link {
   color: $navbarLinkColor;
-  &:hover { color: $navbarLinkColorHover; }
+  &:hover, &:focus { color: $navbarLinkColorHover; }
 }
 
 // Navbar forms
@@ -325,12 +330,11 @@
   }
   .brand, .nav > li > a {
     color: $navbarInverseLinkColor;
-    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-    &:hover { color: $navbarInverseLinkColorHover; }
+    @include text-shadow(0 -1px 0 rgba(0,0,0,.25));
+    &:hover, &:focus { color: $navbarInverseLinkColorHover; }
   }
   .brand { color: $navbarInverseBrandColor; }
   .navbar-text { color: $navbarInverseText; }
-
   .nav {
     > li > a {
       &:focus, &:hover {
@@ -356,9 +360,11 @@
           }
         }
       }
-      > a:hover .caret {
-        border-top-color: $navbarInverseLinkColorActive;
-        color: $navbarInverseLinkColorActive;
+      > a:hover, > a:focus {
+        .caret {
+          border-top-color: $navbarInverseLinkColorActive;
+          color: $navbarInverseLinkColorActive;
+        }
       }
       > .dropdown-toggle .caret {
         border-top-color: $navbarInverseLinkColor;
@@ -369,7 +375,7 @@
   // Inline text links
   .navbar-link {
     color: $navbarInverseLinkColor;
-    &:hover { color: $navbarInverseLinkColorHover; }
+    &:hover, &:focus { color: $navbarInverseLinkColorHover; }
   }
   // Dividers in navbar
   .divider-vertical {

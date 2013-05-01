@@ -331,12 +331,14 @@ select:focus:invalid {
 
 // Allow us to put symbols and text within the input field for a cleaner look
 .input-append, .input-prepend {
-  margin-bottom: 5px;
+  display: inline-block;
+  margin-bottom: $baseLineHeight / 2;
+  vertical-align: middle;
   font-size: 0; // white space collapse hack
   white-space: nowrap; // Prevent span and input from separating
 
   // Reset the white space collapse hack
-  input, select, .uneditable-input, .dropdown-menu { font-size: $baseFontSize; }
+  input, select, .uneditable-input, .dropdown-menu, .popover { font-size: $baseFontSize; }
 
   input, select, .uneditable-input {
     position: relative; // placed here by default so that on :focus we can place the input above the .add-on for full border and box-shadow goodness

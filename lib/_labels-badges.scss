@@ -32,7 +32,7 @@
 
 a {
   &.label, &.badge {
-    &:hover {
+    &:hover, &:focus {
       color: $white;
       text-decoration: none;
       cursor: pointer;
