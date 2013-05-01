@@ -13,61 +13,37 @@
   padding: 1px;
   text-align: left; // Reset given new insertion method
   background-color: $popoverBackground;
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
+  @include background-clip(padding-box);
   border: 1px solid #ccc;
   border: 1px solid rgba(0,0,0,.2);
   @include border-radius(6px);
   @include box-shadow(0 5px 10px rgba(0,0,0,.2));
-
   // Overrides for proper insertion
   white-space: normal;
-
   // Offset the popover to account for the popover arrow
-  &.top     { margin-top: -10px; }
-  &.right   { margin-left: 10px; }
-  &.bottom  { margin-top: 10px; }
-  &.left    { margin-left: -10px; }
-}
-
-.popover-title {
-  margin: 0; // reset heading margin
-  padding: 8px 14px;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 18px;
-  background-color: $popoverTitleBackground;
-  border-bottom: 1px solid darken($popoverTitleBackground, 5%);
-  @include border-radius(5px 5px 0 0);
-}
-
-.popover-content {
-  padding: 9px 14px;
-}
-
-// Arrows
-//
-// .arrow is outer, .arrow:after is inner
-
-.popover .arrow,
-.popover .arrow:after {
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-}
-.popover .arrow {
-  border-width: $popoverArrowOuterWidth;
-}
-.popover .arrow:after {
-  border-width: $popoverArrowWidth;
-  content: "";
-}
-
-.popover {
+  &.top { margin-top: -10px; }
+  &.right { margin-left: 10px; }
+  &.bottom { margin-top: 10px; }
+  &.left { margin-left: -10px; }
+  // Arrows
+  // .arrow is outer, .arrow:after is inner
+  .arrow, .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border: {
+      color: transparent;
+      style: solid;
+    }
+  }
+  .arrow {
+    border-width: $popoverArrowOuterWidth;
+    &:after {
+      border-width: $popoverArrowWidth;
+      content: "";
+    }
+  }
   &.top .arrow {
     left: 50%;
     margin-left: -$popoverArrowOuterWidth;
@@ -110,7 +86,6 @@
       border-bottom-color: $popoverArrowColor;
     }
   }
-
   &.left .arrow {
     top: 50%;
     right: -$popoverArrowOuterWidth;
@@ -125,5 +100,19 @@
       bottom: -$popoverArrowWidth;
     }
   }
-
 }
+
+.popover-title {
+  margin: 0; // reset heading margin
+  padding: 8px 14px;
+  font: {
+    size: 14px;
+    weight: normal;
+  }
+  line-height: 18px;
+  background-color: $popoverTitleBackground;
+  border-bottom: 1px solid darken($popoverTitleBackground, 5%);
+  @include border-radius(5px 5px 0 0);
+}
+
+.popover-content { padding: 9px 14px; }

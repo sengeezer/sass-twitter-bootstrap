@@ -27,6 +27,30 @@
         border: 1px solid $paginationBorder;
         border-left-width: 0;
       }
+      &:first-child {
+        > a, > span {
+          border-left-width: 1px;
+          @include border-left-radius($baseBorderRadius);
+        }
+      }
+      &:last-child {
+        > a, > span { @include border-right-radius($baseBorderRadius); }
+      }
+    }
+    > li > a:hover, > .active > a,
+    > .active > span { background-color: $paginationActiveBackground; }
+    > .active {
+      > a, > span {
+        color: $grayLight;
+        cursor: default;
+      }
+    }
+    > .disabled {
+      > span, > a, > a:hover {
+        color: $grayLight;
+        background-color: transparent;
+        cursor: default;
+      }
     }
     > li > a:hover, > li > a:focus, > .active > a,
     > .active > span { background-color: $paginationActiveBackground; }
