@@ -88,7 +88,10 @@
       &:before, &:after { display: none; }
       .divider { display: none; }
     }
-    .nav > li > a:hover, .dropdown-menu a:hover { background-color: $navbarBackground; }
+    .nav > li > a:hover, 
+    .nav > li > a:focus,
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus { background-color: $navbarBackground; }
     &.in .btn-group {
       margin-top: 5px;
       padding: 0;
@@ -107,7 +110,7 @@
   .navbar-inverse .nav-collapse {
     .nav > li > a, .dropdown-menu a {
       color: $navbarInverseLinkColor;
-      &:hover { background-color: $navbarInverseBackground; }
+      &:hover, &:focus { background-color: $navbarInverseBackground; }
     }
     .navbar-form, .navbar-search {
       border-top-color: $navbarInverseBackground;
@@ -120,9 +123,7 @@
     overflow: hidden;
     height: 0;
   }
-
   // STATIC NAVBAR
-
   .navbar-static .navbar-inner {
     padding-left:  10px;
     padding-right: 10px;
