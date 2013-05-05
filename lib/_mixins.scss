@@ -261,7 +261,7 @@
   *background-color: $endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   @include reset-filter();
   // in these cases the gradient won't cover the background, so we override
-  &:hover, &:active, &.active, &.disabled, &[disabled] {
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
     color: $textColor;
     background-color: $endColor;
     *background-color: darken($endColor, 5%);
