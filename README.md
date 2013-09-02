@@ -1,4 +1,4 @@
-# [Sass Bootstrap v3.0.0](http://getbootstrap.com) [![Build Status](https://secure.travis-ci.org/twbs/bootstrap.png)](http://travis-ci.org/twbs/bootstrap)
+# Sass Bootstrap v3.0.0
 
 Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
 
@@ -7,16 +7,9 @@ This is the Sass version of Bootstrap. A port of Bootsrap from Less to Sass. Thi
 To get started, check out [http://getbootstrap.com](http://getbootstrap.com)!
 
 
+## This fork
 
-## Quick start
-
-Three quick start options are available:
-
-* [Download the latest release](https://github.com/jlong/sass-twitter-bootstrap/zipball/master).
-* Clone the repo: `git clone git://github.com/jlong/sass-twitter-bootstrap.git`.
-* Install with [Bower](http://bower.io): `bower install --save sass-bootstrap`.
-
-
+This fork is an evolution of jlong's version and contains more thorough SCSS, e.g. nesting, and less clutter overall. I will try to keep up with his material updates.
 
 ## Usage
 
@@ -28,25 +21,11 @@ Because SASS always outputs standard css, just link to the final output like nor
 
 For more info, refer to the docs!
 
-
-
-## Basic modification
-
-You can learn more about Sass at:
-
-[sass-lang.com](http://sass-lang.com)
-
-Sass runs as a local GEM on your system. You can run `sass --watch lib/bootstrap.scss:dist/css/bootstrap.css`
-
-
-
 ## Bugs and feature requests
 
 Please do not submit issues or pull requests for issues with Bootstrap itself. Those should be pushed upstream in the Less version. [Please open a new issue](https://github.com/twbs/bootstrap/issues). Before opening any issue, please search for existing issues and read the [Issue Guidelines](https://github.com/necolas/issue-guidelines), written by [Nicolas Gallagher](https://github.com/necolas/).
 
 You may use [this JS Bin](http://jsbin.com/aKiCIDO/1/edit) as a template for your bug reports.
-
-
 
 ## Documentation
 
@@ -66,8 +45,6 @@ Learn more about using Jekyll by reading their [documentation](http://jekyllrb.c
 Documentation for v2.3.2 has been made available for the time being at [http://getbootstrap.com/2.3.2/](http://getbootstrap.com/2.3.2/) while folks transition to Bootstrap 3.
 
 [Previous releases](https://github.com/twbs/bootstrap/releases) and their documentation are also available for download.
-
-
 
 ## Compiling CSS and JavaScript
 
@@ -102,8 +79,6 @@ This is a convenience method for watching just Less files and automatically buil
 
 Should you encounter problems with installing dependencies or running Grunt commands, uninstall all previous dependency versions (global and local). Then, rerun `npm install`.
 
-
-
 ## Contributing
 
 Please read through our guidelines for contributing to Bootstrap. Included are directions for opening issues, coding standards, and notes on development.
@@ -111,8 +86,6 @@ Please read through our guidelines for contributing to Bootstrap. Included are d
 More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the [Code Guide](http://github.com/mdo/code-guide), maintained by [Mark Otto](http://github.com/mdo).
 
 Editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at [http://editorconfig.org](http://editorconfig.org).
-
-
 
 ## Community
 
@@ -122,9 +95,6 @@ Keep track of development and community news.
 * Read and subscribe to the [The Official Bootstrap Blog](http://blog.getbootstrap.com).
 * Have a question that's not a feature request or bug report? [Ask on the mailing list.](http://groups.google.com/group/twitter-bootstrap)
 * Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##twitter-bootstrap` channel.
-
-
-
 
 ## Versioning
 
@@ -142,8 +112,6 @@ And constructed with the following guidelines:
 
 For more information on SemVer, please visit [http://semver.org/](http://semver.org/).
 
-
-
 ## SASS: Developers
 
 We have included a Rakefile with convenience methods for working with the SASS Bootstrap library.
@@ -154,8 +122,6 @@ The lessc compiler is required for this command to run.
 
 + **watch** - `rake watch`
 This is a convenience method for watching your Sass files and automatically building them whenever you save.
-
-
 
 ## Authors
 
@@ -168,8 +134,6 @@ This is a convenience method for watching your Sass files and automatically buil
 
 + [http://twitter.com/fat](http://twitter.com/fat)
 + [http://github.com/fat](http://github.com/fat)
-
-
 
 ## SASS: Conversion less to Sass
 
@@ -197,8 +161,6 @@ The Twitter Bootstrap was lovingly converted to Sass by:
 
 And [others](https://github.com/jlong/sass-twitter-bootstrap/contributors)
 
-
-
 ## SASS: Conversion Quick Tips
 
 * replace @ with $
@@ -213,28 +175,6 @@ And [others](https://github.com/jlong/sass-twitter-bootstrap/contributors)
 * move @import for reset below mixins, because it uses tab-focus mixin in bootstrap.scss
 * explicitly provide .clearfix, .hide-text and .input-block-level for compatibility with LESS output
 * pass grid-* mixin arguments to generators, because otherwise the generator mixins will use the default variables pull transition definition into variable
-
-
-
-## Sass: Installation via Composer
-
-If you already use Composer, the php dependency manager, installing
-sass-twitter-bootstrap is as simple as typing :
-```shell
-composer.phar require jlong/sass-twitter-bootstrap:x.y.z
-```
-This will install version x.y.z from packagist.org
-
-You'll probably want to make sure you get minor updates, like this:
-```shell
-composer.phar require jlong/sass-twitter-bootstrap:~x.y.z
-```
-or like this:
-```shell
-composer.phar require jlong/sass-twitter-bootstrap:x.y.*
-```
-
-
 
 ## Copyright and license
 
