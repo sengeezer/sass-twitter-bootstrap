@@ -14,13 +14,9 @@
   min-height: $navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: $navbar-margin-bottom;
   border: 1px solid transparent;
-
   // Prevent floats from breaking the navbar
   @include clearfix();
-
-  @media (min-width: $grid-float-breakpoint) {
-    border-radius: $navbar-border-radius;
-  }
+  @media (min-width: $grid-float-breakpoint) { @include border-radius($navbar-border-radius;) }
 }
 
 
@@ -31,10 +27,7 @@
 
 .navbar-header {
   @include clearfix();
-
-  @media (min-width: $grid-float-breakpoint) {
-    float: left;
-  }
+  @media (min-width: $grid-float-breakpoint) { float: left; }
 }
 
 
@@ -54,43 +47,27 @@
   padding-right: $navbar-padding-horizontal;
   padding-left:  $navbar-padding-horizontal;
   border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+  @include box-shadow(inset 0 1px 0 rgba(255,255,255,.1));
   @include clearfix();
   -webkit-overflow-scrolling: touch;
-
-  &.in {
-    overflow-y: auto;
-  }
-
+  &.in { overflow-y: auto; }
   @media (min-width: $grid-float-breakpoint) {
     width: auto;
     border-top: 0;
-    box-shadow: none;
-
+    @include box-shadow(none);
     &.collapse {
       display: block !important;
       height: auto !important;
       padding-bottom: 0; // Override default setting
       overflow: visible !important;
     }
-
-    &.in {
-      overflow-y: visible;
-    }
-
+    &.in { overflow-y: visible; }
     // Account for first and last children spacing
-    .navbar-nav.navbar-left:first-child {
-      margin-left: -$navbar-padding-horizontal;
-    }
-    .navbar-nav.navbar-right:last-child {
-      margin-right: -$navbar-padding-horizontal;
-    }
-    .navbar-text:last-child {
-      margin-right: 0;
-    }
+    .navbar-nav.navbar-left:first-child { margin-left: -$navbar-padding-horizontal; }
+    .navbar-nav.navbar-right:last-child { margin-right: -$navbar-padding-horizontal; }
+    .navbar-text:last-child { margin-right: 0; }
   }
 }
-
 
 // Both navbar header and collapse
 //
@@ -100,13 +77,11 @@
 .container > .navbar-collapse {
   margin-right: -$navbar-padding-horizontal;
   margin-left:  -$navbar-padding-horizontal;
-
   @media (min-width: $grid-float-breakpoint) {
     margin-right: 0;
     margin-left:  0;
   }
 }
-
 
 //
 // Navbar alignment options
@@ -117,9 +92,7 @@
 // Static top (unfixed, but 100% wide) navbar
 .navbar-static-top {
   border-width: 0 0 1px;
-  @media (min-width: $grid-float-breakpoint) {
-    border-radius: 0;
-  }
+  @media (min-width: $grid-float-breakpoint) { @include border-radius(0); }
 }
 
 // Fix the top/bottom navbars when screen real estate supports it
@@ -129,11 +102,8 @@
   right: 0;
   left: 0;
   border-width: 0 0 1px;
-
   // Undo the rounded corners
-  @media (min-width: $grid-float-breakpoint) {
-    border-radius: 0;
-  }
+  @media (min-width: $grid-float-breakpoint) { @include border-radius(0); }
 }
 .navbar-fixed-top {
   z-index: $zindex-navbar-fixed;
@@ -144,7 +114,6 @@
   margin-bottom: 0; // override .navbar defaults
 }
 
-
 // Brand/project name
 
 .navbar-brand {
@@ -152,18 +121,11 @@
   padding: $navbar-padding-vertical $navbar-padding-horizontal;
   font-size: $font-size-large;
   line-height: $line-height-computed;
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-
+  &:hover, &:focus { text-decoration: none; }
   @media (min-width: $grid-float-breakpoint) {
-    .navbar > .container & {
-      margin-left: -$navbar-padding-horizontal;
-    }
+    .navbar > .container & { margin-left: -$navbar-padding-horizontal; }
   }
 }
-
 
 // Navbar toggle
 //
@@ -178,8 +140,7 @@
   @include navbar-vertical-align(34px);
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: $border-radius-base;
-
+  @include border-radius($border-radius-base);
   // Bars
   .icon-bar {
     display: block;
@@ -187,15 +148,9 @@
     height: 2px;
     border-radius: 1px;
   }
-  .icon-bar + .icon-bar {
-    margin-top: 4px;
-  }
-
-  @media (min-width: $grid-float-breakpoint) {
-    display: none;
-  }
+  .icon-bar + .icon-bar { margin-top: 4px; }
+  @media (min-width: $grid-float-breakpoint) { display: none; }
 }
-
 
 // Navbar nav links
 //
@@ -204,13 +159,11 @@
 
 .navbar-nav {
   margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
-
   > li > a {
     padding-top:    10px;
     padding-bottom: 10px;
     line-height: $line-height-computed;
   }
-
   @media (max-width: $screen-xs-max) {
     // Dropdowns get custom display when collapsed
     .open .dropdown-menu {
@@ -220,17 +173,12 @@
       margin-top: 0;
       background-color: transparent;
       border: 0;
-      box-shadow: none;
+      @include box-shadow(none);
       > li > a,
-      .dropdown-header {
-        padding: 5px 15px 5px 25px;
-      }
+      .dropdown-header { padding: 5px 15px 5px 25px; }
       > li > a {
         line-height: $line-height-computed;
-        &:hover,
-        &:focus {
-          background-image: none;
-        }
+        &:hover, &:focus { background-image: none; }
       }
     }
   }
@@ -239,7 +187,6 @@
   @media (min-width: $grid-float-breakpoint) {
     float: left;
     margin: 0;
-
     > li {
       float: left;
       > a {
@@ -248,9 +195,7 @@
       }
     }
   }
-
 }
-
 
 // Component alignment
 //
@@ -259,14 +204,9 @@
 // though so that navbar contents properly stack and align in mobile.
 
 @media (min-width: $grid-float-breakpoint) {
-  .navbar-left {
-    float: left !important;
-  }
-  .navbar-right {
-    float: right !important;
-  }
+  .navbar-left { float: left !important; }
+  .navbar-right { float: right !important; }
 }
-
 
 // Navbar form
 //
@@ -281,19 +221,13 @@
   border-bottom: 1px solid transparent;
   $shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
   @include box-shadow($shadow);
-
   // Mixin behavior for optimum display
   @extend .form-inline;
-
   .form-group {
-    @media (max-width: $screen-xs-max) {
-      margin-bottom: 5px;
-    }
+    @media (max-width: $screen-xs-max) { margin-bottom: 5px; }
   }
-
   // Vertically center in expanded, horizontal navbar
   @include navbar-vertical-align($input-height-base);
-
   // Undo 100% width for pull classes
   @media (min-width: $grid-float-breakpoint) {
     width: auto;
@@ -306,7 +240,6 @@
   }
 }
 
-
 // Dropdown menus
 
 // Menu position and menu carets
@@ -315,9 +248,7 @@
   @include border-top-radius(0);
 }
 // Menu position and menu caret support for dropups via extra dropup class
-.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
-  @include border-bottom-radius(0);
-}
+.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu { @include border-bottom-radius(0); }
 
 // Right aligned menus need alt position
 .navbar-nav.pull-right > li > .dropdown-menu,
@@ -326,15 +257,11 @@
   right: 0;
 }
 
-
 // Buttons in navbars
 //
 // Vertically center a button within a navbar (when *not* in a form).
 
-.navbar-btn {
-  @include navbar-vertical-align($input-height-base);
-}
-
+.navbar-btn { @include navbar-vertical-align($input-height-base); }
 
 // Text in navbars
 //
@@ -343,7 +270,6 @@
 .navbar-text {
   float: left;
   @include navbar-vertical-align($line-height-computed);
-
   @media (min-width: $grid-float-breakpoint) {
     margin-left: $navbar-padding-horizontal;
     margin-right: $navbar-padding-horizontal;
@@ -351,70 +277,50 @@
 }
 
 // Alternate navbars
-// --------------------------------------------------
 
 // Default navbar
 .navbar-default {
   background-color: $navbar-default-bg;
   border-color: $navbar-default-border;
-
   .navbar-brand {
     color: $navbar-default-brand-color;
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
       color: $navbar-default-brand-hover-color;
       background-color: $navbar-default-brand-hover-bg;
     }
   }
-
-  .navbar-text {
-    color: $navbar-default-color;
-  }
-
+  .navbar-text { color: $navbar-default-color; }
   .navbar-nav {
-    > li > a {
+    > li > a { 
       color: $navbar-default-link-color;
-
-      &:hover,
-      &:focus {
+      &:hover, &:focus {
         color: $navbar-default-link-hover-color;
         background-color: $navbar-default-link-hover-bg;
       }
     }
     > .active > a {
-      &,
-      &:hover,
-      &:focus {
+      &, &:hover, &:focus {
         color: $navbar-default-link-active-color;
         background-color: $navbar-default-link-active-bg;
       }
     }
     > .disabled > a {
-      &,
-      &:hover,
-      &:focus {
+      &, &:hover, &:focus {
         color: $navbar-default-link-disabled-color;
         background-color: $navbar-default-link-disabled-bg;
       }
     }
   }
-
   .navbar-toggle {
     border-color: $navbar-default-toggle-border-color;
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
       background-color: $navbar-default-toggle-hover-bg;
     }
     .icon-bar {
       background-color: $navbar-default-toggle-icon-bar-bg;
     }
   }
-
-  .navbar-collapse,
-  .navbar-form {
-    border-color: darken($navbar-default-bg, 7%);
-  }
-
+  .navbar-collapse, .navbar-form { border-color: darken($navbar-default-bg, 7%); }
   // Dropdown menu items and carets
   .navbar-nav {
     // Caret should match text color on hover
@@ -423,12 +329,9 @@
       border-top-color: $navbar-default-link-hover-color;
       border-bottom-color: $navbar-default-link-hover-color;
     }
-
     // Remove background color from open dropdown
     > .open > a {
-      &,
-      &:hover,
-      &:focus {
+      &, &:hover, &:focus {
         background-color: $navbar-default-link-active-bg;
         color: $navbar-default-link-active-color;
         .caret {
@@ -441,31 +344,24 @@
       border-top-color: $navbar-default-link-color;
       border-bottom-color: $navbar-default-link-color;
     }
-
-
     @media (max-width: $screen-xs-max) {
       // Dropdowns get custom display when collapsed
       .open .dropdown-menu {
         > li > a {
           color: $navbar-default-link-color;
-          &:hover,
-          &:focus {
+          &:hover, &:focus {
             color: $navbar-default-link-hover-color;
             background-color: $navbar-default-link-hover-bg;
           }
         }
         > .active > a {
-          &,
-          &:hover,
-          &:focus {
+          &, &:hover, &:focus {
             color: $navbar-default-link-active-color;
             background-color: $navbar-default-link-active-bg;
           }
         }
         > .disabled > a {
-          &,
-          &:hover,
-          &:focus {
+          &, &:hover, &:focus {
             color: $navbar-default-link-disabled-color;
             background-color: $navbar-default-link-disabled-bg;
           }
@@ -473,19 +369,13 @@
       }
     }
   }
-
-
   // Links in navbars
   //
   // Add a class to ensure links outside the navbar nav are colored correctly.
-
   .navbar-link {
     color: $navbar-default-link-color;
-    &:hover {
-      color: $navbar-default-link-hover-color;
-    }
+    &:hover { color: $navbar-default-link-hover-color; }
   }
-
 }
 
 // Inverse navbar
@@ -493,71 +383,46 @@
 .navbar-inverse {
   background-color: $navbar-inverse-bg;
   border-color: $navbar-inverse-border;
-
   .navbar-brand {
     color: $navbar-inverse-brand-color;
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
       color: $navbar-inverse-brand-hover-color;
       background-color: $navbar-inverse-brand-hover-bg;
     }
   }
-
-  .navbar-text {
-    color: $navbar-inverse-color;
-  }
-
+  .navbar-text { color: $navbar-inverse-color; }
   .navbar-nav {
-    > li > a {
+    > li > a { 
       color: $navbar-inverse-link-color;
-
-      &:hover,
-      &:focus {
+      &:hover, &:focus {
         color: $navbar-inverse-link-hover-color;
         background-color: $navbar-inverse-link-hover-bg;
       }
     }
     > .active > a {
-      &,
-      &:hover,
-      &:focus {
+      &, &:hover, &:focus {
         color: $navbar-inverse-link-active-color;
         background-color: $navbar-inverse-link-active-bg;
       }
     }
     > .disabled > a {
-      &,
-      &:hover,
-      &:focus {
+      &, &:hover, &:focus {
         color: $navbar-inverse-link-disabled-color;
         background-color: $navbar-inverse-link-disabled-bg;
       }
     }
   }
-
   // Darken the responsive nav toggle
   .navbar-toggle {
     border-color: $navbar-inverse-toggle-border-color;
-    &:hover,
-    &:focus {
-      background-color: $navbar-inverse-toggle-hover-bg;
-    }
-    .icon-bar {
-      background-color: $navbar-inverse-toggle-icon-bar-bg;
-    }
+    &:hover, &:focus { background-color: $navbar-inverse-toggle-hover-bg; }
+    .icon-bar { background-color: $navbar-inverse-toggle-icon-bar-bg; }
   }
-
-  .navbar-collapse,
-  .navbar-form {
-    border-color: darken($navbar-inverse-bg, 7%);
-  }
-
+  .navbar-collapse, .navbar-form { border-color: darken($navbar-inverse-bg, 7%); }
   // Dropdowns
   .navbar-nav {
     > .open > a {
-      &,
-      &:hover,
-      &:focus {
+      &, &:hover, &:focus {
         background-color: $navbar-inverse-link-active-bg;
         color: $navbar-inverse-link-active-color;
       }
@@ -571,42 +436,32 @@
       border-bottom-color: $navbar-inverse-link-color;
     }
     > .open > a {
-      &,
-      &:hover,
-      &:focus {
+      &, &:hover, &:focus {
         .caret {
           border-top-color: $navbar-inverse-link-active-color;
           border-bottom-color: $navbar-inverse-link-active-color;
         }
       }
     }
-
     @media (max-width: $screen-xs-max) {
       // Dropdowns get custom display
       .open .dropdown-menu {
-        > .dropdown-header {
-          border-color: $navbar-inverse-border;
-        }
+        > .dropdown-header { border-color: $navbar-inverse-border; }
         > li > a {
           color: $navbar-inverse-link-color;
-          &:hover,
-          &:focus {
+          &:hover, &:focus {
             color: $navbar-inverse-link-hover-color;
             background-color: $navbar-inverse-link-hover-bg;
           }
         }
         > .active > a {
-          &,
-          &:hover,
-          &:focus {
+          &, &:hover, &:focus {
             color: $navbar-inverse-link-active-color;
             background-color: $navbar-inverse-link-active-bg;
           }
         }
         > .disabled > a {
-          &,
-          &:hover,
-          &:focus {
+          &, &:hover, &:focus {
             color: $navbar-inverse-link-disabled-color;
             background-color: $navbar-inverse-link-disabled-bg;
           }
@@ -614,12 +469,8 @@
       }
     }
   }
-
   .navbar-link {
     color: $navbar-inverse-link-color;
-    &:hover {
-      color: $navbar-inverse-link-hover-color;
-    }
+    &:hover { color: $navbar-inverse-link-hover-color; }
   }
-
 }

@@ -615,8 +615,5 @@
     height: $input-height;
     line-height: $input-height;
   }
-
-  textarea#{$parent} {
-    height: auto;
-  }
+  textarea#{$parent} { height: auto; }
 }
