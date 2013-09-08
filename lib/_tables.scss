@@ -8,19 +8,15 @@ table {
 }
 th { text-align: left; }
 
-
 // Baseline styles
 
 .table {
   width: 100%;
   margin-bottom: $line-height-computed;
   // Cells
-  thead,
-  tbody,
-  tfoot {
+  thead, tbody, tfoot {
     > tr {
-      > th,
-      > td {
+      > th, > td {
         padding: $table-cell-padding;
         line-height: $line-height-base;
         vertical-align: top;
@@ -34,9 +30,7 @@ th { text-align: left; }
     border-bottom: 2px solid $table-border-color;
   }
   // Remove top border from thead by default
-  caption + thead,
-  colgroup + thead,
-  thead:first-child {
+  caption + thead, colgroup + thead, thead:first-child {
     tr:first-child {
       th, td {
         border-top: 0;
@@ -44,32 +38,22 @@ th { text-align: left; }
     }
   }
   // Account for multiple tbody instances
-  tbody + tbody {
-    border-top: 2px solid $table-border-color;
-  }
-
+  tbody + tbody { border-top: 2px solid $table-border-color; }
   // Nesting
-  .table {
-    background-color: $body-bg;
-  }
+  .table { background-color: $body-bg; }
 }
-
 
 // Condensed table w/ half padding
 
 .table-condensed {
-  thead,
-  tbody,
-  tfoot {
+  thead, tbody, tfoot {
     > tr {
-      > th,
-      > td {
+      > th, > td {
         padding: $table-condensed-cell-padding;
       }
     }
   }
 }
-
 
 // Bordered version
 //
@@ -77,26 +61,19 @@ th { text-align: left; }
 
 .table-bordered {
   border: 1px solid $table-border-color;
-  > thead,
-  > tbody,
-  > tfoot {
+  > thead, > tbody, > tfoot {
     > tr {
-      > th,
-      > td {
+      > th, > td {
         border: 1px solid $table-border-color;
       }
     }
   }
   > thead {
     > tr {
-      > th,
-      > td {
-        border-bottom-width: 2px;
-      }
+      > th, > td { border-bottom-width: 2px; }
     }
   }
 }
-
 
 // Zebra-striping
 //
@@ -105,14 +82,10 @@ th { text-align: left; }
 .table-striped {
   > tbody {
     > tr:nth-child(odd) {
-      > td,
-      > th {
-        background-color: $table-bg-accent;
-      }
+      > td, > th { background-color: $table-bg-accent; }
     }
   }
 }
-
 
 // Hover effect
 //
@@ -121,14 +94,10 @@ th { text-align: left; }
 .table-hover {
   > tbody {
     > tr:hover {
-      > td,
-      > th {
-        background-color: $table-bg-hover;
-      }
+      > td, > th { background-color: $table-bg-hover; }
     }
   }
 }
-
 
 // Table cell sizing
 //
@@ -138,16 +107,15 @@ table col[class*="col-"] {
   float: none;
   display: table-column;
 }
+
 table {
-  td,
-  th {
+  td, th {
     &[class*="col-"] {
       float: none;
       display: table-cell;
     }
   }
 }
-
 
 // Table backgrounds
 //
@@ -157,19 +125,14 @@ table {
 .table > thead > tr,
 .table > tbody > tr,
 .table > tfoot > tr {
-  > td.active,
-  > th.active,
-  &.active > td,
-  &.active > th  {
-    background-color: $table-bg-active;
-  }
+  > td.active, > th.active,
+  &.active > td, &.active > th  { background-color: $table-bg-active; }
 }
 
 // Generate the contextual variants
 @include table-row-variant('success', $state-success-bg, $state-success-border);
 @include table-row-variant('danger', $state-danger-bg, $state-danger-border);
 @include table-row-variant('warning', $state-warning-bg, $state-warning-border);
-
 
 // Responsive tables
 //
@@ -184,48 +147,28 @@ table {
     overflow-y: hidden;
     overflow-x: scroll;
     border: 1px solid $table-border-color;
-
     // Tighten up spacing and give a background color
     > .table {
       margin-bottom: 0;
       background-color: #fff;
-
       // Ensure the content doesn't wrap
-      > thead,
-      > tbody,
-      > tfoot {
+      > thead, > tbody, > tfoot {
         > tr {
-          > th,
-          > td {
-            white-space: nowrap;
-          }
+          > th, > td { white-space: nowrap; }
         }
       }
     }
-
     // Special overrides for the bordered tables
     > .table-bordered {
       border: 0;
-
       // Nuke the appropriate borders so that the parent can handle them
-      > thead,
-      > tbody,
-      > tfoot {
+      > thead, > tbody, > tfoot {
         > tr {
-          > th:first-child,
-          > td:first-child {
-            border-left: 0;
-          }
-          > th:last-child,
-          > td:last-child {
-            border-right: 0;
-          }
+          > th:first-child, > td:first-child { border-left: 0; }
+          > th:last-child, > td:last-child { border-right: 0; }
         }
         > tr:last-child {
-          > th,
-          > td {
-            border-bottom: 0;
-          }
+          > th, > td { border-bottom: 0; }
         }
       }
     }

@@ -7,18 +7,11 @@
 .thumbnail {
   @extend .img-thumbnail;
   display: block; // Override the inline-block from `.img-thumbnail`
-
-  > img {
-    @include img-responsive();
-  }
+  > img { @include img-responsive(); }
 }
-
 
 // Add a hover state for linked versions only
-a.thumbnail:hover,
-a.thumbnail:focus {
-  border-color: $link-color;
-}
+a.thumbnail:hover, a.thumbnail:focus { border-color: $link-color; }
 
 // Images and captions
 .thumbnail > img {

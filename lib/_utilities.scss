@@ -4,39 +4,18 @@
 
 
 // Floats
-// -------------------------
 
-.clearfix {
-  @include clearfix();
-}
-.pull-right {
-  float: right !important;
-}
-.pull-left {
-  float: left !important;
-}
-
+.clearfix { @include clearfix(); }
+.pull-right { float: right !important; }
+.pull-left { float: left !important; }
 
 // Toggling content
-// -------------------------
 
-.hide {
-  display: none !important;
-}
-.show {
-  display: block !important;
-}
-.invisible {
-  visibility: hidden;
-}
-.text-hide {
-  @include hide-text();
-}
-
+.hide { display: none !important; }
+.show { display: block !important; }
+.invisible { visibility: hidden; }
+.text-hide { @include hide-text(); }
 
 // For Affix plugin
-// -------------------------
 
-.affix {
-  position: fixed;
-}
+.affix { position: fixed; }
